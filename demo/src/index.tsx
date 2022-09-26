@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
-import JcInput from '../../src/index';
+import { Input } from '../../src/index';
 
 const App = () => {
+    const [val, setVal] = useState(2);
+
+    const changeValue = () => {
+        setVal(val+1);
+    }
     return (
         <div>
-            <JcInput />
+            <Input  value={val} />
+            <button onClick={()=>changeValue()}>改变</button>
         </div>
     )
 }
