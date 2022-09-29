@@ -22,3 +22,4 @@
 // export default JcInput;
 
 export { default as Input } from './input';
+export { default as notification} from './notification';

@@ -1,8 +1,11 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
 import type { InputProps as RcInputProps, InputRef } from 'rc-input';
 import RcInput from 'rc-input';
+import { composeRef } from 'rc-util/lib/ref'
 
 export type { InputRef };
+
+
 
 // 对外暴露的属性 RcInputProps 为 RcInput组件已经暴露的 
 // Omit 排除第二个参数后的其他属性
@@ -13,18 +16,28 @@ export interface InputProps
   > {
   disabled?: boolean;
   bordered?: boolean;
-  atea?:number;         /// 无意义属性，测试下暴露的属性
 }
 
 const Input = forwardRef<InputRef, InputProps>((props, ref) => {
-  console.log(props, 'props')
+  
+  const inputRef = useRef<InputRef>(null);
+
+  useEffect(()=>{
+    // console.log(props, 'props')
+    // console.log(ref, 'ref');
+    // console.log(inputRef, 'inputRef')
+    // inputRef
+  },[])
+
   // const {
   //   ...rest
   // } = props;
 
-  console.log(props, 'rest')
+
   return (
-      <RcInput {...props}/>
+      <RcInput 
+      ref={composeRef(ref, inputRef)}
+      {...props}/>
   )
 })
 
