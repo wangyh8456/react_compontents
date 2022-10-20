@@ -1,0 +1,63 @@
+$bg:#001529;
+$color:rgba(255,255,255,.65);
+$subbg:#001300;
+$subcolor:#fff;
+
+.menu{
+    background: $bg;
+}
+.menu-sub{
+    color:$color;
+}
+.menu-subitem{
+    cursor: pointer;
+    background: $bg;
+    padding: 10px 10px 10px 0;
+    display: flex;
+    align-items: center;
+    &:hover{
+        color: #fff;
+    }
+    .menu-subitem-title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex: 1;
+    }
+}
+.menu-subitem-sub2{
+    background: $subbg;
+}
+.menu-item{
+    cursor: pointer;
+    background: $subbg;
+    padding: 10px 10px 10px 0;
+    display: flex;
+    align-items: center;
+    &:hover{
+        color: #fff;
+    }
+    .menu-item-title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+.menu-item-choose{
+    background: #1296db;
+    color: #fff;
+}
+.menu-icon{
+    margin-right: 10px;
+}
+.menu-arrow{
+    width: 16px;
+    height: 16px;
+    background: url('../menu/assets/arrow1.svg') no-repeat;
+    background-size: 100% 100%;
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+}
+.menu-arrow-trans{
+    transform: rotate(90deg);
+}

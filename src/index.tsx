@@ -23,3 +23,4 @@
 
 export { default as Input } from './input';
 export { default as notification} from './notification';
+export { Menu,SubMenu,MenuItem} from './menu';
